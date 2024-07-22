@@ -21,22 +21,24 @@ function PostCard({ $id, title, featuredImage, content }) {
   // Extract and truncate the text content from HTML
   const longString = extractTextContent(content);
   const shortString = truncateString(longString, 70);
+  const shortTitle = truncateString(title,28)
 
   // Reconstruct the truncated content back to HTML if needed
   const truncatedContentHTML = `<p>${shortString}</p>`;
 
   return (
     <Link to={`/post/${$id}`}>
-      <div className="md:p-2 flex flex-col relative p-2 ">
-        <div className="rounded-xl overflow-hidden">
+      <div className="md:p-2 flex flex-col p-2 ">
+        <div className="rounded-xl min-w-full overflow-hidden bg-contain">
           <img
             src={appwriteService.getFilePreview(featuredImage)}
             alt="Blog Post"
+            className="rounded-xl inline-block  w-full max-h-[35vh] "
             
           />
         </div>
-        <h1 className="text-xl md:text-2xl font-medium mt-3">{title}</h1>
-        <p className="text-slate-700 text-lg mt-3">{parse(truncatedContentHTML)}</p>
+        <h1 className="text-xl md:text-2xl font-medium mt-3 break-words">{shortTitle}</h1>
+        <p className="text-slate-700 text-lg mt-3 break-words">{parse(truncatedContentHTML)}</p>
         <button className="bg-blue-400 my-3 hover:bg-blue-300 text-blue-700 font-semibold py-2  rounded-lg focus:scale-95 transition-all duration-200 ease-out">
           View Post
         </button>
