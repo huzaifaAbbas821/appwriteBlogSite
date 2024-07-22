@@ -34,7 +34,7 @@ export default function Post() {
 
   return post ? (
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-      <div class="max-w-3xl mx-auto bg-slate-100 relative">
+      <div class="max-w-3xl mx-auto px-4 py-4 bg-slate-100 relative">
         {isAuthor && (
           <div className="absolute right-6 top-6">
             <Link to={`/edit-post/${post.$id}`}>
@@ -47,7 +47,7 @@ export default function Post() {
             </Button>
           </div>
         )}
-        <div class="py-8">
+        <div class="py-8 ">
           <h1 class="text-3xl font-bold mb-2">{post.title}</h1>
         </div>
         <img
