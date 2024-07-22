@@ -42,7 +42,7 @@ function Header() {
   ];
 
   return (
-    <header className="py-3  bg-[#DDD0C8] text-[#323232] min-w-screen z-10      "
+    <header className="py-5 md:py-3  bg-[#DDD0C8] text-[#323232] min-w-screen z-10      "
 
     >
       <Container>
