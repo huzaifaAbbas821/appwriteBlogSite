@@ -158,7 +158,7 @@ function Footer() {
             </ul>
         </div>
         <hr className="my-6 sm:mx-auto border-gray-700 lg:my-8" />
-        <span className="block text-sm text-gray-800 sm:text-center hover:underline">© 2023 Flowbite™. All Rights Reserved.</span>
+        <span className="block text-sm text-gray-800 sm:text-center hover:underline">© 2023 Huzaifa™. All Rights Reserved.</span>
     </div>
 </footer>
   )
