@@ -33,8 +33,8 @@ export default function Post() {
   };
 
   return post ? (
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-      <div class="max-w-3xl mx-auto px-4 py-4 bg-slate-100 relative">
+    <div className="max-w-7xl mx-auto my-6 px-4 sm:px-6 lg:px-8 ">
+      <div className="max-w-[100vw] md:max-w-3xl mx-auto px-4 py-4 bg-slate-100 relative">
         {isAuthor && (
           <div className="absolute right-6 top-6">
             <Link to={`/edit-post/${post.$id}`}>
@@ -47,15 +47,15 @@ export default function Post() {
             </Button>
           </div>
         )}
-        <div class="py-8 ">
-          <h1 class="text-3xl font-bold mb-2">{post.title}</h1>
+        <div className="py-8 ">
+          <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
         </div>
         <img
           src={appwriteService.getFilePreview(post.featuredImage)}
           alt="Featured image"
-          class="w-full h-auto mb-8"
+          className="w-full h-auto mb-8"
         />
-        <div class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto">
+        <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto">
           {parse(post.content)}
         </div>
       </div>
