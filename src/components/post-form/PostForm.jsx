@@ -37,7 +37,7 @@ export default function PostForm({ post }) {
             const dbPost = await appwriteService.updatePost(post.$id, {
                 ...data,
                 featuredImage: file ? file.$id : undefined,
-                submittedAt: formattedDate,
+                submittedAt: formattedDate, // Include submittedAt attribute
             });
 
             if (dbPost) {
@@ -49,8 +49,11 @@ export default function PostForm({ post }) {
             if (file) {
                 const fileId = file.$id;
                 data.featuredImage = fileId;
-                data.submittedAt = formattedDate;
-                const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
+                data.submittedAt = formattedDate; // Include submittedAt attribute
+                const dbPost = await appwriteService.createPost({ 
+                    ...data, 
+                    userId: userData.$id 
+                });
 
                 if (dbPost) {
                     navigate(`/post/${dbPost.$id}`);
