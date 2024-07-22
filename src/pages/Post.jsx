@@ -49,9 +49,6 @@ export default function Post() {
         )}
         <div class="py-8">
           <h1 class="text-3xl font-bold mb-2">{post.title}</h1>
-          <p class="text-gray-500 text-sm">
-            Published on {post.submittedAt }
-          </p>
         </div>
         <img
           src={appwriteService.getFilePreview(post.featuredImage)}
