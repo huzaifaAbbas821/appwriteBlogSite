@@ -50,7 +50,7 @@ export default function Post() {
         <div class="py-8">
           <h1 class="text-3xl font-bold mb-2">{post.title}</h1>
           <p class="text-gray-500 text-sm">
-            Published on <time datetime="2022-04-05">April 5, 2022</time>
+            Published on {post.submittedAt }
           </p>
         </div>
         <img

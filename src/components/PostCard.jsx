@@ -1,5 +1,6 @@
 import React from "react";
 import appwriteService from "../appwrite/config";
+import parse from "html-react-parser";
 import { Link } from "react-router-dom";
 
 function PostCard({ $id, title, featuredImage, content }) {
@@ -16,7 +17,7 @@ function PostCard({ $id, title, featuredImage, content }) {
             <p
               className="text-slate-700 text-lg mt-3"
             >
-              {content}
+              {parse(content)}
             </p>
             <button className="bg-blue-400  hover:bg-blue-300 text-blue-700 font-semibold py-2  rounded-lg focus:scale-95 transition-all duration-200 ease-out">
               View Post

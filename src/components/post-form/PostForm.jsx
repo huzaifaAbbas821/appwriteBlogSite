@@ -15,10 +15,17 @@ export default function PostForm({ post }) {
         },
     });
 
+    const getCurrentFormattedDate = () => {
+        const date = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+    };
+
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
 
     const submit = async (data) => {
+        const formattedDate = getCurrentFormattedDate();
         if (post) {
             const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
 
@@ -29,6 +36,7 @@ export default function PostForm({ post }) {
             const dbPost = await appwriteService.updatePost(post.$id, {
                 ...data,
                 featuredImage: file ? file.$id : undefined,
+                submittedAt: formattedDate,
             });
 
             if (dbPost) {
@@ -40,7 +48,8 @@ export default function PostForm({ post }) {
             if (file) {
                 const fileId = file.$id;
                 data.featuredImage = fileId;
-                const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
+                data.submittedAt = formattedDate;
+                const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id , });
 
                 if (dbPost) {
                     navigate(`/post/${dbPost.$id}`);
