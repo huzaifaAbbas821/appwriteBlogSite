@@ -42,14 +42,13 @@ function Header() {
   ];
 
   return (
-    <header className="py-5 md:py-3  bg-[#DDD0C8] text-[#323232] min-w-screen z-10      "
-
-    >
+    <header className="py-1 md:py-2  bg-[#DDD0C8] text-[#323232] min-w-screen z-10 transform  "
+    style={{ boxShadow: "0 -6px 10px 5px rgba(0, 0, 0, 0.4)" }}>
       <Container>
-        <nav className="flex justify-between w-[100%] min-w-screen px-[3vw]   py-[0.8vw]      transform 
-        -translate-y-3 "
-         style={{ boxShadow: '0 1px 10px rgba(0, 0, 0, 0.5)' }}
-         >
+        <nav
+          className="flex justify-between w-[100%] min-w-screen px-[3vw]   py-[0.8vw]      "
+          
+        >
           <div className=" lg:w-[40%] md:w-[30%] ">
             <Link to="/">
               <Logo width="70vw" />
@@ -63,7 +62,9 @@ function Header() {
                     onClick={() => navigate(item.slug)}
                     className={`inline-bock lg:text-[1.4vw] md:text-[1.6vw]   ${
                       index > 1
-                        ? `bg-[#323232] text-sm  text-[#fff] font-normal ${ authStatus == false ? "inline-block" : "hidden" } md:inline-block md:px-[0.8vw] md:py-[0.2vw] lg:px-[0.8em] lg:py-[0.4vw] xl:py-[0.8vw]`
+                        ? `bg-[#323232] text-sm  text-[#fff] font-normal ${
+                            authStatus == false ? "inline-block" : "hidden"
+                          } md:inline-block px-2 py-1 mx-1 md:mx-0 md:px-[0.6vw] md:py-[0.2vw] lg:px-[0.8em] lg:py-[0.4vw] xl:py-[0.8vw]`
                         : "bg-[#DDD0C8] text-[#323232] hidden md:inline-block md:px-[0.8vw] md:py-[0.2vw] lg:px-[0.4em] lg:py-[0.4vw]"
                     } duration-200 rounded-md font-semibold `}
                   >
@@ -76,7 +77,7 @@ function Header() {
               <li>
                 <LogoutBtn />
               </li>
-            ) }
+            )}
           </ul>
         </nav>
       </Container>

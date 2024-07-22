@@ -23,15 +23,15 @@ function App() {
   }, []);
 
   return !loading ? (
-    <div className="min-h-screen max-w-screen flex flex-wrap content-between bg-[#DDD0C8]">
-      {/* <div className="w-full block"> */}
+    <div className="min-h-screen max-w-screen flex   bg-[#DDD0C8]">
+      <div className="w-full block">
         <Header />
         <main>
           <Outlet />
         </main>
         <Footer />
       </div>
-    // </div>
+     </div>
   ) : null;
 }
 

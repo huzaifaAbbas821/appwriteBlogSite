@@ -20,7 +20,7 @@ function Home() {
   return (
     <div className="max-w-screen md:py-8 text-center bg-[#DDD0C8] text-[#323232] md:px-[4vw]">
       <Container>
-        <div className="flex  flex-col-reverse md:flex-row md:h-[75vh] lg:h-[82vh] w-full ">
+        <div className="flex  flex-col-reverse md:flex-row  w-full ">
           <div className=" flex flex-col w-full md:w-[50%] md:-mt-[4vw]  gap-[2vw] items-center justify-center md:items-start lg:justify-start">
             <h1 className=" text-3xl md:text-[5vw] lg:text-[4vw] md:text-start text-center  font-bold font-sans lg:mt-[6vw] text-gray-950 leading-none">
               Discover Your Next Adventure Here{" "}
@@ -34,7 +34,7 @@ function Home() {
             {posts.length === 0 ? (
               <button
                 onClick={() => navigate("/login")}
-                className=" text-xl px-3 py-1 my-4 md:my-0  md:px-[0.6em] md:py-[0.4em]  md:text-[1.4vw] bg-[#323232] text-[#fff] rounded-lg hover:cursor-pointer"
+                className=" text-lg px-3 py-1 my-4 md:my-0  md:px-[0.6em] md:py-[0.4em]  md:text-[1.4vw] bg-[#323232] text-[#fff] rounded-lg hover:cursor-pointer"
               >
                 Login to View Posts
               </button>
@@ -43,7 +43,7 @@ function Home() {
                 to="posts"
                 smooth={true}
                 duration={500}
-                className="text-xl px-3 py-1 my-4 md:my-0 md:px-[0.6em] md:py-[0.4em] md:text-[1.4vw] bg-[#323232] text-[#fff] rounded-lg hover:cursor-pointer"
+                className="text-lg px-3 py-1 my-4 md:my-0 md:px-[0.6em] md:py-[0.4em] md:text-[1.4vw] bg-[#323232] text-[#fff] rounded-lg hover:cursor-pointer"
               >
                 Your Posts
               </Link>
