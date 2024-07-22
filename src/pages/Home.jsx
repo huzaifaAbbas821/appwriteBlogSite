@@ -45,7 +45,7 @@ function Home() {
                 duration={500}
                 className="text-lg px-3 py-1 my-4 md:my-0 md:px-[0.6em] md:py-[0.4em] md:text-[1.4vw] bg-[#323232] text-[#fff] rounded-lg hover:cursor-pointer"
               >
-                Your Posts
+                See Posts
               </Link>
             )}
           </div>
@@ -61,8 +61,8 @@ function Home() {
           <></>
         ) : (
           <Element name="posts">
-            <hr className="bg-slate-800 h-2" />
-            <div className="flex justify-center items-center text-2xl"> <h1>Posts </h1></div>
+            <hr className="bg-slate-800 h-1" />
+            <div className="flex justify-center items-center text-3xl text-black"> <h1>Posts </h1></div>
             <div className="flex  justify-center items-center min-h-screen mx-auto container mb-20 ">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-2">
                 {posts.map((post) => (
