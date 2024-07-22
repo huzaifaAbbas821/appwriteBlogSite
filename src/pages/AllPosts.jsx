@@ -12,15 +12,18 @@ function AllPosts() {
     })
   return (
     <div className='w-full py-8'>
-        <Container>
-            <div className='flex flex-wrap'>
+                   <div className="flex  justify-center items-center min-h-screen mx-auto container mb-20 ">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-2">
                 {posts.map((post) => (
-                    <div key={post.$id} className='p-2 w-1/4'>
-                        <PostCard {...post} />
-                    </div>
+                  <div
+                    key={post.$id}
+                    className="rounded-xl shadow-lg bg-slate-200 border-slate-400 border-[1px] "
+                  >
+                    <PostCard {...post} />
+                  </div>
                 ))}
+              </div>
             </div>
-            </Container>
     </div>
   )
 }
